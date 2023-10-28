@@ -13,6 +13,7 @@
         methods: {
             async saveTask() {
                 await createTask(this.task);
+                this.$router.push({ name: "tasks" })
             },
         },
     });
