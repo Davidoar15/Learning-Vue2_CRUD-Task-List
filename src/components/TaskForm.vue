@@ -20,15 +20,29 @@
 </script>
 
 <template>
-    <form @submit.prevent="saveTask()">
-        <input 
-            type="text"
-            v-model="task.title"
-            placeholder="Write a Title..."
-        />
+    <div class="col-md-4 offset-md-4">
+        <form 
+            @submit.prevent="saveTask()"
+            class="card card-body"
+        >
+            <h1 class="text-center mb-4">Create Task!</h1>
 
-        <textarea rows="3" v-model="task.content" placeholder="Write Task..."></textarea>
-
-        <button>Save</button>
-    </form>
+            <input 
+                type="text"
+                v-model="task.title"
+                placeholder="Write a Title..."
+                autofocus
+                class="form-control mb-4"
+            />
+    
+            <textarea rows="3" v-model="task.content" placeholder="Write Task..." class="form-control mb-4"></textarea>
+    
+            <button 
+                :disabled="!task.title || !task.content"
+                class="btn btn-primary"
+            >
+                Save
+            </button>
+        </form>
+    </div>
 </template>

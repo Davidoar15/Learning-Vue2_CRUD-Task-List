@@ -40,18 +40,37 @@
 </scrip>
 
 <template>
-    <h1>Task Detail</h1>
-
-    <form @submit.prevent="handleUpdate()">
-        <input 
-            type="text" 
-            v-model="currentTask.title"
-        />
-
-        <textarea rows="3" v-model="currentTask.content"></textarea>
-
-        <button>Update</button>
-    </form>
-
-    <button @click="handleDelete()">Delete</button>
+    <div class="col-md-4 offset-md-4">
+        <h1 class="text-center h3 mb-4">Task Detail</h1>
+    
+        <form 
+            @submit.prevent="handleUpdate()"
+            class="card card-body mb-5"
+        >
+            <input 
+                type="text" 
+                v-model="currentTask.title"
+                placeholder="Write a Title..."
+                class="form-control mb-4"
+            />
+    
+            <textarea rows="3" v-model="currentTask.content" placeholder="Write Task..." class="form-control mb-4"></textarea>
+    
+            <button 
+                :disabled="!currentTask.title || !currentTask.content"
+                class="btn btn-primary"
+            >
+                Update
+            </button>
+        </form>
+    
+        <div class="text-center">
+            <button 
+                @click="handleDelete()"
+                class="btn btn-danger"
+            >
+                Delete
+            </button>
+        </div>
+    </div>
 </template>

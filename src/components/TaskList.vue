@@ -25,12 +25,14 @@
 </script>
 
 <template>
-    <ul>
+    <ul class="list-group">
         <li 
-            v-for="task in tasks"
+            v-for="(task, index) in tasks"
             :key="task._id"    
             @click="$router.push(`/tasks/${task._id}`)"
+            class="list-group-item list-group-item-action"
         >
+            {{ index + 1 }}.
             {{ task.title }}
         </li>
     </ul>
