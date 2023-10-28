@@ -5,6 +5,7 @@ const taskSchema = new Schema({
         type: String,
         require: true,
         trim: true,
+        unique: true,
     },
     content: {
         type: String,
