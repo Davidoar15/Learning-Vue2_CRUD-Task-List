@@ -48,7 +48,7 @@ router.post('/tasks', async (req, res) => {
 
 router.put("/tasks/:id", async (req, res) => {
     const { id } = req.params;
-    const { title, content } = req.body;
+    const { title, content, done } = req.body;
 
     try {
         if (!title || !content) return res.status(401).send("Missing Data");
@@ -56,6 +56,7 @@ router.put("/tasks/:id", async (req, res) => {
         const updatedTask = await Task.findByIdAndUpdate(id, {
             title, 
             content,
+            done,
         }, { new: true });
 
         return res.status(200).json(updatedTask);

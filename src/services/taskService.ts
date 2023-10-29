@@ -34,7 +34,7 @@ export const updateTask = async (id: string, task: Task) => {
         return res.data;
     } catch(error) {
         console.log("UPDATE TASK", error);
-    };
+    }
 };
 
 export const deleteTask = async (id: string) => {
@@ -43,5 +43,5 @@ export const deleteTask = async (id: string) => {
         return res.data;
     } catch(error) {
         console.log("DELETE TASK", error);
-    };
+    }
 };

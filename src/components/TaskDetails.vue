@@ -1,4 +1,4 @@
-<scrip lang="ts">
+<script lang="ts">
     import { Task } from "@/interfaces/task";
     import { defineComponent } from "vue";
     import { getTask, updateTask, deleteTask } from "../services/taskService";
@@ -34,10 +34,10 @@
         mounted() {
             if (typeof this.$route.params.id === "string") {
                 this.loadTask(this.$route.params.id)
-            };
+            }
         },
     });
-</scrip>
+</script>
 
 <template>
     <div class="col-md-4 offset-md-4">
